@@ -1,0 +1,45 @@
+# in PowerShell as adminstrator
+
+## instal torch manually:pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+## python -m pip install fastapi uvicorn python-multipart pydantic email-validator jinja2 streamlit requests pandas python-jose passlib[bcrypt] PyPDF2 python-docx docx2txt pdfplumber PyMuPDF pdfminer.six Pillow spacy sentence-transformers transformers accelerate scikit-learn numpy rapidfuzz regex python-dotenv tqdm python-dateutil aiofiles
+## python -m pip install --user openai tiktoken
+# python -m pip install pymongo
+# pip install jwt
+# pip install faiss-cpu
+# python -m spacy download en_core_web_md
+# pip install streamlit
+# pip install argon2-cffi
+# python -m spacy download en_core_web_sm
+
+
+
+# -----------------------------
+# Core Backend (FastAPI)
+# -----------------------------
+starlette
+
+# -----------------------------
+# LLM / Explanation (DeepSeek / API)
+# -----------------------------
+openai
+tiktoken
+
+# -----------------------------
+# Vector Search (Optional)
+# -----------------------------
+# faiss-cpu is skipped on Windows/Python 3.12 (use CPU version from Conda if needed)
+
+# -----------------------------
+# Frontend / Utilities (if not already installed)
+# -----------------------------
+# Already installed manually:
+# streamlit, requests, pandas, fastapi, uvicorn, python-multipart, pydantic, email-validator, jinja2
+# python-jose, passlib[bcrypt]
+# PyPDF2, python-docx, docx2txt, pdfplumber, PyMuPDF, pdfminer.six, Pillow
+# spacy, sentence-transformers, transformers, accelerate, scikit-learn, numpy, pandas, rapidfuzz, regex
+# python-dotenv, tqdm, python-dateutil, aiofiles
+
+
+# to run backend use: python -m uvicorn backend.main:app --reload  
+# to run frontend use: python -m streamlit run app.py
+              

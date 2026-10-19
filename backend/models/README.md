@@ -1,0 +1,1 @@
+The fine-tuned models used in OptiRAG are not included in this repository because of their large file sizes (hundreds of MB)

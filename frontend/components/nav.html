@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<style>
+/* -------------------------------
+   NAVBAR
+--------------------------------*/
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+
+    background-color: #2f4fa0;
+    color: white;
+    font-size: 26px;
+    font-weight: 700;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+    box-sizing: border-box;
+
+    z-index: 2147483646; /* below dropdown only */
+}
+
+/* -------------------------------
+   MENU BUTTON
+--------------------------------*/
+.menu-btn {
+    padding: 10px 20px;
+    background: #ffffff22;
+    border: 1px solid #ffffff55;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    font-size: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Safe HTML entity for ☰ */
+.menu-icon {
+    font-size: 20px;
+}
+
+/* -------------------------------
+   DROPDOWN
+--------------------------------*/
+#dropdownMenu {
+    position: fixed;
+    top: 75px;
+    right: 30px;
+
+    width: 230px;
+    background: white;
+    border-radius: 12px;
+    padding: 10px 0;
+
+    display: none;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+
+    z-index: 2147483647; /* absolute top */
+}
+
+.dropdown-item {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #222;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background: #f1f1f1;
+}
+
+.logout {
+    color: red;
+    font-weight: 600;
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div>OptiRAG: Optimizing Resume Screening Using RAG</div>
+
+    <div id="menuBtn" class="menu-btn">
+        <span class="menu-icon">&#9776;</span> Menu
+    </div>
+</div>
+
+<!-- DROPDOWN MENU -->
+<div id="dropdownMenu">
+    <div class="dropdown-item">&#128100; Profile</div>
+    <div class="dropdown-item">&#9881; Settings</div>
+    <div class="dropdown-item logout">&#128274; Logout</div>
+</div>
+
+<script>
+// MENU TOGGLE SCRIPT
+document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("menuBtn");
+    const menu = document.getElementById("dropdownMenu");
+
+    btn.addEventListener("click", function (event) {
+        event.stopPropagation();
+        menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    });
+
+    // Close menu on outside click
+    document.addEventListener("click", function () {
+        menu.style.display = "none";
+    });
+
+    // Close menu on ESC key
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") menu.style.display = "none";
+    });
+});
+</script>
+
+</body>
+</html>
